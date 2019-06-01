@@ -24,8 +24,12 @@ class HomePage extends React.Component {
     return (
       <div class="home-page-main-container">
         <div>
-          <h1 class="text-center">Welcome to Explorer</h1>
-
+          
+          <h1 class="text-center"> 
+            <img src='../../../../images/target.png' alt="Logo"></img>
+            Welcome to Explorer
+          </h1>
+          
         </div>
       </div>
     );
