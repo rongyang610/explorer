@@ -1,0 +1,10 @@
+.home-page-main-container {
+  background-image: linear-gradient(to right, #010626, #12356D);
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+

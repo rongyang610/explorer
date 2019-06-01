@@ -1,0 +1,6 @@
+
+# Ignore bundler config.
+/dist
+
+# Ignore uploaded files in development
+/node_modules
