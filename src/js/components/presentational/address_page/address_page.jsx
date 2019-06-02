@@ -1,5 +1,4 @@
 import React from 'react';
-import './home_page.css';
 import { Link } from 'react-router-dom';
 
 // const searchStyle = {
@@ -7,7 +6,7 @@ import { Link } from 'react-router-dom';
 // };
 
 
-class HomePage extends React.Component {
+class AddressPage extends React.Component {
   
   constructor(props) {
     super(props);
@@ -38,4 +37,4 @@ class HomePage extends React.Component {
 
 
 
-export default HomePage;
+export default AddressPage;

@@ -5,7 +5,7 @@ export default (state={}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BTC_ADDRESS_INFO:
-      return merge({}, action.coinInfo.Data[0].info);
+      return merge({}, action.info);
     default:
       return state;
   }
