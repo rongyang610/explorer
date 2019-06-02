@@ -1,6 +1,6 @@
 import React from 'react';
 import './home_page.css';
-import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 // const searchStyle = {
 //   backgroundColor: 'yellow',
@@ -27,13 +27,40 @@ class HomePage extends React.Component {
     };
   }
 
+  checkTxArrLength(address, offset, txArrLength){
+    if(txArrLength < 50){
+      this.props.history.push(`/BTC/${address}`);
+    } else {
+      this.fetchMoreBTCAddressInfo(address, offset);
+    }
+  }
+
+  fetchMoreBTCAddressInfo(address, offset){
+    this.props.getMoreBTCAddressInfo(address, offset)
+    .then((info) => {
+      const txArrLength = info.info.txs.length;
+      const newOffset = offset + 50;
+      this.checkTxArrLength(address, newOffset, txArrLength);
+    }).catch(() => this.props.history.push(`/BTC/${address}`));
+  }
+
   handleSubmit(e){
     e.preventDefault();
-    const btcAddress = this.state.searchVal;
-    if(btcAddress.length > 0){
-      this.props.getBTCAddressInfo(btcAddress)
-      .then(() => this.props.history.push(`/BTC/${btcAddress}`))
-      .catch(() => this.props.history.push(`/BTC/${btcAddress}`));
+    const address = this.state.searchVal;
+    if(address.length > 0){
+      this.props.getBTCAddressInfo(address)
+      .then( info => {
+        const txArrLength = info.info.txs.length;
+        this.checkTxArrLength(address, 50, txArrLength);
+      })
+      .catch(() => {
+        Swal.fire({
+          type: 'error',
+          title: address,
+          text: 'is NOT a valid Bitcoin Address!',
+        });
+        this.setState({searchVal: ''});
+      });
     }
   }
   
@@ -52,7 +79,7 @@ class HomePage extends React.Component {
             <input 
               className="home-page-search-bar" 
               type="search" 
-              placeholder="Search"
+              placeholder="Bitcoin Address"
               value={this.state.searchVal}
               onChange={this.update('searchVal')}
             />

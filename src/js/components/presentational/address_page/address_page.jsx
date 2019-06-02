@@ -10,13 +10,6 @@ class AddressPage extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state={
-      searchVal: ''
-    };
-  }
-
-  componentDidMount(){
-    //If I have time I'll add bitcoin price, hashrate, difficulty, tx per day, average value, average fee, unconfirmed, mempool
   }
   
   render(){
