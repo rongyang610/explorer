@@ -1,10 +1,14 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import NavBarContainer from '../../container/nav/nav_bar_container';
+import AddressSumaryContainer from '../../container/address_summary/address_summary_container';
+import TransactionListContainer from '../../container/transaction/transaction_list_container';
 
-// const searchStyle = {
-//   backgroundColor: 'yellow',
-// };
+
+const style = {
+  display: 'flex',
+  flexDirection: 'column',
+};
 
 
 class AddressPage extends React.Component {
@@ -63,8 +67,10 @@ class AddressPage extends React.Component {
   
   render(){
     return (
-      <div>
+      <div style={style}>
         <NavBarContainer />
+        <AddressSumaryContainer />
+        <TransactionListContainer />
       </div>
     );
   }
