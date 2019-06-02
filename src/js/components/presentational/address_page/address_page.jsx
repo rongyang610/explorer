@@ -1,6 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import NavBarContainer from '../../container/nav/nav_bar_container';
 
 // const searchStyle = {
 //   backgroundColor: 'yellow',
@@ -15,7 +15,10 @@ class AddressPage extends React.Component {
 
   componentDidMount(){
     const { btcAddressInfo, address } = this.props;
+    const infoAddress = btcAddressInfo.address;
     if(Object.keys(btcAddressInfo).length === 0){
+      this.fetchBTCAddressInfo(address);
+    } else if(infoAddress !== address){
       this.fetchBTCAddressInfo(address);
     }
   }
@@ -60,15 +63,8 @@ class AddressPage extends React.Component {
   
   render(){
     return (
-      <div className="home-page-main-container">
-        <div>
-          
-          <h1 className="text-center"> 
-            <img src='../../../../images/target.png' alt="Logo"></img>
-            Welcome to Explorer
-          </h1>
-          
-        </div>
+      <div>
+        <NavBarContainer />
       </div>
     );
   }

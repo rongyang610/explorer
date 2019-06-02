@@ -1,25 +1,18 @@
 import React from 'react';
-import './home_page.css';
+import './nav_bar.css';
+import '../home_page/home_page.css';
+import {Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import logo from '../../../../images/target.png';
 
-// const searchStyle = {
-//   backgroundColor: 'yellow',
-// };
-
-
-class HomePage extends React.Component {
+class NavBar extends React.Component {
   
   constructor(props) {
     super(props);
     this.state={
-      searchVal: ''
+      searchVal: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount(){
-    //If I have time I'll add bitcoin price, hashrate, difficulty, tx per day, average value, average fee, unconfirmed, mempool
   }
 
   update(field){
@@ -64,21 +57,21 @@ class HomePage extends React.Component {
       });
     }
   }
-  
+
   render(){
     return (
-      <div className="home-page-main-container">
-        <div className="home-page-header-container">
-          <div className="text-center home-page-logo-container">
+      <div className="nav-bar-main-container">
+        <Link to='/' className="left-nav-bar-container">
+          <div className="text-center">
             <img src={logo} alt="Logo" className="home-page-logo"></img>
           </div>
           <div className="align-middle">
             <h1 className="text-center"> 
-              Welcome to Explorer
+              Explorer
             </h1>
           </div>
-        </div>
-        <div className="home-page-search-bar-container">
+        </Link>
+        <div className="right-nav-bar-container">
           <form onSubmit={this.handleSubmit} className="home-page-search-bar-form">
             <i className="fas fa-search search-icon"></i>
             <input 
@@ -102,4 +95,4 @@ class HomePage extends React.Component {
 
 
 
-export default HomePage;
+export default NavBar;
