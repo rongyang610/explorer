@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BTCAddressPage from '../../container/address_page/address_page_container';
+import BTCAddressPage from '../../presentational/address_page/address_page';
 
 const msp = ({entities, errors}, ownProps) => {
     return {

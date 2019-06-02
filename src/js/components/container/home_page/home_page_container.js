@@ -4,7 +4,7 @@ import { getBTCAddressInfo } from '../../../actions/btc_actions';
 
 const mdp = dispatch => {
     return {
-      getBTCAddressInfo: () => dispatch(getBTCAddressInfo())
+      getBTCAddressInfo: (address) => dispatch(getBTCAddressInfo(address))
     };
 };
 

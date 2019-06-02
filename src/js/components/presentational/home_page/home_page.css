@@ -6,5 +6,82 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
+.home-page-header-container{
+  margin-bottom: 5%;
+}
+
+.home-page-search-bar-container{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 12%;
+}
+
+.home-page-search-bar-form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon{
+  position: relative;
+  left: 30px;
+  font-size: 18px;
+  color: black;
+}
+
+.home-page-search-bar{
+  width: 80%;
+  margin-right: 5%;
+  border-radius: 5px;
+  padding: 7px 0px 8px 40px;
+  border: none;
+  outline: none;
+}
+
+.home-page-search-bar-button-off{
+  width: 100px;
+  background-color: #034CA9;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 5px;
+  color: #8394AF;
+}
+
+.home-page-search-bar-button-off:hover{
+  cursor: not-allowed;
+}
+
+.home-page-search-bar-button-off:focus{
+  cursor: not-allowed;
+  outline: none;
+  border: none;
+}
+
+.home-page-search-bar-button-on{
+  width: 100px;
+  background-color: #0A6CF1;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  color: white;
+}
+
+.home-page-search-bar-button-on:hover{
+  color: #8394AF;
+  background-color: #034CA9;
+  cursor: pointer;
+}
+
+.home-page-search-bar-button-on:focus{
+  color: #8394AF;
+  background-color: #034CA9;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
