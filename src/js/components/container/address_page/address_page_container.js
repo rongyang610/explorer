@@ -1,9 +1,14 @@
 import { connect } from 'react-redux';
 import BTCAddressPage from '../../presentational/address_page/address_page';
-
-const msp = ({entities: {btcAddressInfo}}) => {
+import { 
+    getBTCAddressInfo,
+    getMoreBTCAddressInfo
+  } from '../../../actions/btc_actions';
+  
+const msp = ({ entities: {btcAddressInfo} }, ownProps) => {
     return {
-        btcAddress: btcAddressInfo.address,
+        btcAddressInfo: btcAddressInfo,
+        address: ownProps.match.params.btcAddress,
         finalAddressAmount: btcAddressInfo.final_balance,
         hash160: btcAddressInfo.hash160,
         numTxs: btcAddressInfo.n_tx,
@@ -13,4 +18,11 @@ const msp = ({entities: {btcAddressInfo}}) => {
     };
 };
 
-export default connect(msp, null)(BTCAddressPage);
+const mdp = dispatch => {
+    return {
+      getBTCAddressInfo: (address) => dispatch(getBTCAddressInfo(address)),
+      getMoreBTCAddressInfo: (address, offset) => dispatch(getMoreBTCAddressInfo(address, offset))
+    };
+};
+
+export default connect(msp, mdp)(BTCAddressPage);
