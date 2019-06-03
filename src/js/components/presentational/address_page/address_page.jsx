@@ -8,6 +8,13 @@ import TransactionListContainer from '../../container/transaction/transaction_li
 const style = {
   display: 'flex',
   flexDirection: 'column',
+  backgroundColor: '#F0F2F6',
+  height: '100vh'
+};
+
+const contentStyle = {
+  backgroundColor: '#F0F2F6',
+  
 };
 
 
@@ -69,8 +76,10 @@ class AddressPage extends React.Component {
     return (
       <div style={style}>
         <NavBarContainer />
-        <AddressSumaryContainer />
-        <TransactionListContainer />
+        <div style={contentStyle}>
+          <AddressSumaryContainer />
+          <TransactionListContainer />
+        </div>
       </div>
     );
   }

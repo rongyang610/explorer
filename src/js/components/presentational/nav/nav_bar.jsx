@@ -72,10 +72,10 @@ class NavBar extends React.Component {
           </div>
         </Link>
         <div className="right-nav-bar-container">
-          <form onSubmit={this.handleSubmit} className="home-page-search-bar-form">
+          <form onSubmit={this.handleSubmit} className="nav-page-search-bar-form">
             <i className="fas fa-search search-icon"></i>
             <input 
-              className="home-page-search-bar" 
+              className="home-page-search-bar right-nav-bar-search-input" 
               type="search" 
               placeholder="Bitcoin Address"
               value={this.state.searchVal}

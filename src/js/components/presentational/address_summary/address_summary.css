@@ -1,0 +1,63 @@
+.address-summary-right-td > a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+.address-summary-right-td a:visited{
+  color: blue;
+  text-decoration: none;
+}
+
+.address-summary-right-td a:hover{
+  color: blue;
+  text-decoration: none;
+}
+
+.address-summary-right-td a:active{
+  color: blue;
+  text-decoration: none;
+}
+
+.address-summary-main-container{
+  margin: 110px auto 50px auto;
+}
+
+.address-summary-container{
+ border-radius: 10px;
+ /* box-shadow: 0px 0px 25px #12356D; */
+ padding-bottom: 20px;
+ min-width: 450px;
+}
+
+.address-summary-wallet-info{
+  margin: 10px 0 -10px 0;
+}
+
+.address-summary-list-row-item{
+  border-bottom: 2px solid #F0F2F6;
+  margin: 0px 30px;
+  padding: 15px 0;
+}
+
+.address-summary-first-item{
+  border-top: none;
+}
+
+.address-summary-left-td{
+  width: 150px;
+  padding: 0 5px;
+  font-weight: 700;
+  /* text-align: center; */
+}
+
+.address-summary-currency{
+  color: green;
+}
+
+.address-summary-currency-sent{
+  color: red;
+}
+
+.address-summary-last-item{
+  border: none;
+}

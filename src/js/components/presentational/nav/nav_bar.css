@@ -27,6 +27,7 @@ a:active{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .left-nav-bar-container{
@@ -36,4 +37,16 @@ a:active{
 
 .right-nav-bar-container{
   padding-right: 20px;
+  width: 70%;
+}
+
+.nav-page-search-bar-form{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-nav-bar-search-input{
+  max-width: 450px;
 }
