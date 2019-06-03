@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import NavBarContainer from '../../container/nav/nav_bar_container';
 import AddressSumaryContainer from '../../container/address_summary/address_summary_container';
 import TransactionListContainer from '../../container/transaction/transaction_list_container';
-
+import { ClipLoader } from 'react-spinners';
 
 const style = {
   display: 'flex',
@@ -14,7 +14,11 @@ const style = {
 
 const contentStyle = {
   backgroundColor: '#F0F2F6',
-  
+};
+
+const loadingStyle = {
+  backgroundColor: '#F0F2F6',
+  height: '100vh',
 };
 
 
@@ -22,6 +26,9 @@ class AddressPage extends React.Component {
   
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true,
+    };
   }
 
   componentDidMount(){
@@ -31,6 +38,8 @@ class AddressPage extends React.Component {
       this.fetchBTCAddressInfo(address);
     } else if(infoAddress !== address){
       this.fetchBTCAddressInfo(address);
+    } else if(Object.keys(btcAddressInfo).length !== 0){
+      this.setState({loading: false});
     }
   }
 
@@ -60,6 +69,8 @@ class AddressPage extends React.Component {
   checkTxArrLength(address, offset, txArrLength){
     if(txArrLength === 50){
       this.fetchMoreBTCAddressInfo(address, offset);
+    } else{
+      this.setState({loading: false});
     }
   }
 
@@ -73,13 +84,28 @@ class AddressPage extends React.Component {
   }
   
   render(){
+    const loadingResult = this.state.loading ? (
+      <div className='container' style={loadingStyle}>
+        <div className='row align-items-center' style={loadingStyle}>
+          <div className='col-1 offset-5'>
+            <ClipLoader
+              sizeUnit={"px"}
+              size={150}
+              color={'#0000FF'}
+              loading={this.state.loading}
+            />
+          </div>
+        </div>
+      </div>) : (
+      <div style={contentStyle}>
+        <AddressSumaryContainer />
+        <TransactionListContainer />
+      </div>
+      )
     return (
       <div style={style}>
         <NavBarContainer />
-        <div style={contentStyle}>
-          <AddressSumaryContainer />
-          <TransactionListContainer />
-        </div>
+        {loadingResult}
       </div>
     );
   }

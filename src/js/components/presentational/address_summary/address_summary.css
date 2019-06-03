@@ -24,7 +24,7 @@
 
 .address-summary-container{
  border-radius: 10px;
- /* box-shadow: 0px 0px 25px #12356D; */
+ box-shadow: 0px 0px 15px rgb(170, 174, 180);
  padding-bottom: 20px;
  min-width: 450px;
 }

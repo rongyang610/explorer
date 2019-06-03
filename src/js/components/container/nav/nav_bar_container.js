@@ -4,6 +4,7 @@ import {
   getBTCAddressInfo,
   getMoreBTCAddressInfo
 } from '../../../actions/btc_actions';
+import { withRouter } from 'react-router-dom';
 
 const mdp = dispatch => {
     return {
@@ -12,4 +13,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(null, mdp)(NavBar);
+export default withRouter(connect(null, mdp)(NavBar));

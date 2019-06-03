@@ -18,10 +18,6 @@ class HomePage extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    //If I have time I'll add bitcoin price, hashrate, difficulty, tx per day, average value, average fee, unconfirmed, mempool
-  }
-
   update(field){
     return e => {
       this.setState({[field]: e.target.value});
