@@ -15,7 +15,6 @@ class TX extends React.Component {
   }
 
   getInputTx(){
-    debugger
     const {input} = this.props;
     return input.map((ele, i) => {
       const prevOut = ele.prev_out;

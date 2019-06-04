@@ -1,0 +1,16 @@
+.hash-tx-monetary-main-container{
+  margin: 0 auto 50px auto;
+}
+
+.hash-tx-monetary-container{
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgb(170, 174, 180);
+  padding-bottom: 20px;
+  min-width: 450px;
+ }
+
+ .hash-tx-monetary-list-row-item{
+  border-bottom: 2px solid #DFE3EB;
+  margin: 0;
+  padding: 15px 0;
+}

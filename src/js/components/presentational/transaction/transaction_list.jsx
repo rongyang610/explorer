@@ -9,7 +9,8 @@ class TransactionList extends React.Component {
     this.state={
       loading: true,
       page: 0,
-      showAmount: 50,
+      showAmount: '50',
+      dropdown: false,
     };
   }
 
@@ -88,7 +89,7 @@ class TransactionList extends React.Component {
 
   mapped(address){
     const {txsArr} = this.props;
-    const {page} = this.state;
+    const {page, showAmount} = this.state;
     const mappedHTML = txsArr.map((tx, i) => {
       const time = this.convertTimeStamp(tx.time);
       const txHash = tx.hash;
@@ -114,20 +115,23 @@ class TransactionList extends React.Component {
         />
       )
     });
-    return mappedHTML.slice(50*page, 50*(page + 1));
+    return mappedHTML.slice(parseInt(showAmount)*page, parseInt(showAmount)*(page + 1));
   }
 
   makePageButtons(amount){
-    const newArr = new Array(Math.ceil(amount/50)).fill();
+    const {showAmount} = this.state;
+
+    const newArr = new Array(Math.ceil(amount/(parseInt(showAmount)))).fill();
     return newArr.map((_, i) => {
       const active = (this.state.page === i) ? "btn-primary" : "btn-secondary";
-      return(<button key={i} onClick={() => this.setState({page: i})} className={`btn mx-1 ${active}`}>
+      return(<button key={i} onClick={() => this.setState({page: i})} className={`btn mx-1 mb-1 ${active}`}>
         {i + 1}
       </button>)
     });
   }
   
   render(){
+    const {dropdown, showAmount} = this.state;
     const mappedTx = this.props.txsArr.length > 0 ? this.mapped(this.props.address) : (
       <div className='container' style={loadingStyle}>
         <div className='row align-items-center' style={loadingStyle}>
@@ -142,18 +146,28 @@ class TransactionList extends React.Component {
         </div>
       </div>
     );
-    const pageButtons = this.makePageButtons(this.props.txsArr.length)
+    const pageButtons = this.makePageButtons(this.props.txsArr.length);
+    const menuClass = `dropdown-menu${dropdown ? " show" : ""}`;
     return (
       <div className='container'>
         <div className='card transaction-container'>
-          <div className='card-body row'>
-
+          <div className='card-body row align-items-center'>
             <h4 className='card-title col-3'>Transactions</h4>
-            <div className='col 2'>
-
-            </div>
-            <div className='col-3 text-right'>
+          </div>
+          <div className='card-body row align-items-center'> 
+            <div className='col-11 text-right'>
               {pageButtons}
+            </div>
+            <div className="dropdown" onClick={() => this.setState({dropdown: !dropdown})}>
+              <button className="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {showAmount}
+              </button>
+              <div className={menuClass} aria-labelledby="dropdownMenuButton">
+                <div className="dropdown-item" onClick={() => this.setState({showAmount: '10', dropdown: false, page: 0})}>10</div>
+                <div className="dropdown-item" onClick={() => this.setState({showAmount: '25', dropdown: false, page: 0})}>25</div>
+                <div className="dropdown-item" onClick={() => this.setState({showAmount: '50', dropdown: false, page: 0})}>50</div>
+                <div className="dropdown-item" onClick={() => this.setState({showAmount: '100', dropdown: false, page: 0})}>100</div>
+              </div>
             </div>
           </div>
           <div className='container pl-4'>

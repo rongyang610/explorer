@@ -2,6 +2,8 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import NavBarContainer from '../../container/nav/nav_bar_container';
 import TXContainer from '../../container/hash/tx/tx_container';
+import TechnicalContainer from '../../container/hash/technical/technical_container';
+import MonetaryContainer from '../../container/hash/monetary/monetary_container';
 import { ClipLoader } from 'react-spinners';
 import './hash_tx.css';
 
@@ -48,14 +50,14 @@ class TxHash extends React.Component {
     .then( (tx) => {
       this.setState({loading: false});
     })
-    // .catch(() => {
-    //   Swal.fire({
-    //     type: 'error',
-    //     title: hash,
-    //     text: 'is NOT a valid Transaction Hash!',
-    //   });
-    //   this.props.history.push(`/`);
-    // });
+    .catch(() => {
+      Swal.fire({
+        type: 'error',
+        title: hash,
+        text: 'is NOT a valid Transaction Hash!',
+      });
+      this.props.history.push(`/`);
+    });
   }
   
   render(){
@@ -74,6 +76,8 @@ class TxHash extends React.Component {
       </div>) : (
       <div style={contentStyle}>
         <TXContainer></TXContainer>
+        <TechnicalContainer></TechnicalContainer>
+        <MonetaryContainer></MonetaryContainer>
       </div>
       )
     return (
