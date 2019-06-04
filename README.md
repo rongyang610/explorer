@@ -1,6 +1,11 @@
 # Explorer
 
-[Live Site](https://www.jjyang.com/explorer)
+To run a local server do the following:
+1. Open terminal
+2. Clone the repository: ```git clone https://github.com/rongyang610/explorer.git```
+3. Install npm: ```npm install```
+4. Start the local server: ```npm run build```
+5. Enjoy!
 
 Explorer, is a cryptocurrency explorer. It allows user to view transactions from a bitcoin address using Blockchain.com's API.
 
