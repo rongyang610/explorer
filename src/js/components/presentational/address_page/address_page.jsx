@@ -46,6 +46,7 @@ class AddressPage extends React.Component {
   componentDidUpdate(prevProps){
     const { address } = this.props;
     if(prevProps.address !== address){
+      this.setState({loading: true});
       this.fetchBTCAddressInfo(address);
     }
   }
@@ -104,7 +105,7 @@ class AddressPage extends React.Component {
       )
     return (
       <div style={style}>
-        <NavBarContainer />
+        <NavBarContainer/>
         {loadingResult}
       </div>
     );

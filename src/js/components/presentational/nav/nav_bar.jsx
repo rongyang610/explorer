@@ -21,40 +21,41 @@ class NavBar extends React.Component {
     };
   }
 
-  checkTxArrLength(address, offset, txArrLength){
-    if(txArrLength < 50){
-      this.props.history.push(`/btc/${address}`);
-    } else {
-      this.fetchMoreBTCAddressInfo(address, offset);
-    }
-  }
+  // checkTxArrLength(address, offset, txArrLength){
+  //   if(txArrLength < 50){
+  //     this.props.history.push(`/btc/${address}`);
+  //   } else {
+  //     this.fetchMoreBTCAddressInfo(address, offset);
+  //   }
+  // }
 
-  fetchMoreBTCAddressInfo(address, offset){
-    this.props.getMoreBTCAddressInfo(address, offset)
-    .then((info) => {
-      const txArrLength = info.info.txs.length;
-      const newOffset = offset + 50;
-      this.checkTxArrLength(address, newOffset, txArrLength);
-    }).catch(() => this.props.history.push(`/btc/${address}`));
-  }
+  // fetchMoreBTCAddressInfo(address, offset){
+  //   this.props.getMoreBTCAddressInfo(address, offset)
+  //   .then((info) => {
+  //     const txArrLength = info.info.txs.length;
+  //     const newOffset = offset + 50;
+  //     this.checkTxArrLength(address, newOffset, txArrLength);
+  //   }).catch(() => this.props.history.push(`/btc/${address}`));
+  // }
 
   handleSubmit(e){
     e.preventDefault();
     const address = this.state.searchVal;
     if(address.length > 0){
-      this.props.getBTCAddressInfo(address)
-      .then( info => {
-        const txArrLength = info.info.txs.length;
-        this.checkTxArrLength(address, 50, txArrLength);
-      })
-      .catch(() => {
-        Swal.fire({
-          type: 'error',
-          title: address,
-          text: 'is NOT a valid Bitcoin Address!',
-        });
-        this.setState({searchVal: ''});
-      });
+      this.props.history.push(`/btc/${address}`);
+      // this.props.getBTCAddressInfo(address)
+      // .then( info => {
+      //   const txArrLength = info.info.txs.length;
+      //   this.checkTxArrLength(address, 50, txArrLength);
+      // })
+      // .catch(() => {
+      //   Swal.fire({
+      //     type: 'error',
+      //     title: address,
+      //     text: 'is NOT a valid Bitcoin Address!',
+      //   });
+      //   this.setState({searchVal: ''});
+      // });
     }
   }
 
