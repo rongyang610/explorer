@@ -4,7 +4,6 @@ import { getTx } from '../../../actions/tx_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = ({ entities: {tx} }, ownProps) => {
-  debugger
   return {
       hash: ownProps.match.params.hash,
       tx: tx

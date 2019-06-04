@@ -11,7 +11,7 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/" component={HomePageContainer} />
-        <Route exact path="/btc/:btcAddress" component={AddressPageContainer} />
+        <Route exact path="/btc/address/:btcAddress" component={AddressPageContainer} />
         <Route exact path="/btc/tx/:hash" component={HashTxContainer} />
       </Switch>
     </div>

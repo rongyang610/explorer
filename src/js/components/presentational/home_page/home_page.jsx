@@ -22,7 +22,7 @@ class HomePage extends React.Component {
     e.preventDefault();
     const address = this.state.searchVal;
     if(address.length > 0){
-      this.props.history.push(`/btc/${address}`);
+      this.props.history.push(`/btc/address/${address}`);
     }
   }
   

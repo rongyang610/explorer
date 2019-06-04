@@ -33,15 +33,8 @@ class AddressPage extends React.Component {
   }
 
   componentDidMount(){
-    const { btcAddressInfo, address } = this.props;
-    const infoAddress = btcAddressInfo.address;
-    if(Object.keys(btcAddressInfo).length === 0){
-      this.fetchBTCAddressInfo(address);
-    } else if(infoAddress !== address){
-      this.fetchBTCAddressInfo(address);
-    } else if(Object.keys(btcAddressInfo).length !== 0){
-      this.setState({loading: false});
-    }
+    const { address } = this.props;
+    this.fetchBTCAddressInfo(address);
   }
 
   componentDidUpdate(prevProps){
@@ -82,7 +75,7 @@ class AddressPage extends React.Component {
       const txArrLength = info.info.txs.length;
       const newOffset = offset + 50;
       this.checkTxArrLength(address, newOffset, txArrLength);
-    }).catch(() => this.props.history.push(`/btc/${address}`));
+    }).catch(() => this.props.history.push(`/btc/address/${address}`));
   }
   
   render(){

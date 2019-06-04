@@ -62,7 +62,7 @@ class TransactionList extends React.Component {
       return(
       <div className="row align-items-center" key={i}>
         <div className="col-7 text-truncate blue-link-tx">
-          <Link to={`/btc/${address}`} target='_blank'>
+          <Link to={`/btc/address/${address}`} target='_blank'>
             {address}
           </Link>
         </div>
@@ -85,7 +85,7 @@ class TransactionList extends React.Component {
       return(
       <div className="row align-items-center" key={i}>
         <div className="col-7 text-truncate blue-link-tx">
-          <Link to={`/btc/${address}`} target='_blank'>
+          <Link to={`/btc/address/${address}`} target='_blank'>
             {address}
           </Link>
         </div>
