@@ -80,7 +80,7 @@ class AddressPage extends React.Component {
       const txArrLength = info.info.txs.length;
       const newOffset = offset + 50;
       this.checkTxArrLength(address, newOffset, txArrLength);
-    }).catch(() => this.props.history.push(`/BTC/${address}`));
+    }).catch(() => this.props.history.push(`/btc/${address}`));
   }
   
   render(){

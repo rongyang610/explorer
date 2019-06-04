@@ -23,7 +23,7 @@ class NavBar extends React.Component {
 
   checkTxArrLength(address, offset, txArrLength){
     if(txArrLength < 50){
-      this.props.history.push(`/BTC/${address}`);
+      this.props.history.push(`/btc/${address}`);
     } else {
       this.fetchMoreBTCAddressInfo(address, offset);
     }
@@ -35,7 +35,7 @@ class NavBar extends React.Component {
       const txArrLength = info.info.txs.length;
       const newOffset = offset + 50;
       this.checkTxArrLength(address, newOffset, txArrLength);
-    }).catch(() => this.props.history.push(`/BTC/${address}`));
+    }).catch(() => this.props.history.push(`/btc/${address}`));
   }
 
   handleSubmit(e){

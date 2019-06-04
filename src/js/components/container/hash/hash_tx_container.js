@@ -1,16 +1,20 @@
 import { connect } from 'react-redux';
-import NavBar from '../../presentational/nav/nav_bar';
-import { 
-  getBTCAddressInfo,
-  getMoreBTCAddressInfo
-} from '../../../actions/btc_actions';
+import HashTx from '../../presentational/hash/hash_tx';
+import { getTx } from '../../../actions/tx_actions';
 import { withRouter } from 'react-router-dom';
+
+const msp = ({ entities: {tx} }, ownProps) => {
+  debugger
+  return {
+      hash: ownProps.match.params.hash,
+      tx: tx
+  };
+};
 
 const mdp = dispatch => {
     return {
-      getBTCAddressInfo: (address) => dispatch(getBTCAddressInfo(address)),
-      getMoreBTCAddressInfo: (address, offset) => dispatch(getMoreBTCAddressInfo(address, offset))
+      getTx: hash => dispatch(getTx(hash)),
     };
 };
 
-export default withRouter(connect(null, mdp)(NavBar));
+export default withRouter(connect(msp, mdp)(HashTx));

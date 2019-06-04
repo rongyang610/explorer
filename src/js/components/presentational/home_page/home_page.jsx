@@ -1,12 +1,6 @@
 import React from 'react';
 import './home_page.css';
-import Swal from 'sweetalert2';
 import logo from '../../../../images/target.png';
-
-// const searchStyle = {
-//   backgroundColor: 'yellow',
-// };
-
 
 class HomePage extends React.Component {
   
@@ -24,40 +18,11 @@ class HomePage extends React.Component {
     };
   }
 
-  checkTxArrLength(address, offset, txArrLength){
-    if(txArrLength < 50){
-      this.props.history.push(`/BTC/${address}`);
-    } else {
-      this.fetchMoreBTCAddressInfo(address, offset);
-    }
-  }
-
-  fetchMoreBTCAddressInfo(address, offset){
-    this.props.getMoreBTCAddressInfo(address, offset)
-    .then((info) => {
-      const txArrLength = info.info.txs.length;
-      const newOffset = offset + 50;
-      this.checkTxArrLength(address, newOffset, txArrLength);
-    }).catch(() => this.props.history.push(`/BTC/${address}`));
-  }
-
   handleSubmit(e){
     e.preventDefault();
     const address = this.state.searchVal;
     if(address.length > 0){
-      this.props.getBTCAddressInfo(address)
-      .then( info => {
-        const txArrLength = info.info.txs.length;
-        this.checkTxArrLength(address, 50, txArrLength);
-      })
-      .catch(() => {
-        Swal.fire({
-          type: 'error',
-          title: address,
-          text: 'is NOT a valid Bitcoin Address!',
-        });
-        this.setState({searchVal: ''});
-      });
+      this.props.history.push(`/btc/${address}`);
     }
   }
   
