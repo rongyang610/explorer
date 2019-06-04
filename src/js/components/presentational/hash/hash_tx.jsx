@@ -1,6 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import NavBarContainer from '../../container/nav/nav_bar_container';
+import TXContainer from '../../container/hash/tx/tx_container';
 import { ClipLoader } from 'react-spinners';
 import './hash_tx.css';
 
@@ -34,23 +35,27 @@ class TxHash extends React.Component {
     this.fetchTx(hash);
   }
 
-  componentDidUpdate(){
+  componentDidUpdate(prevProps){
+    const {hash} = this.props;
+    if(prevProps.hash !== hash){
+      this.setState({loading: true});
+      this.fetchTx(hash);
+    }
   }
 
   fetchTx(hash){
     this.props.getTx(hash)
-    .then( tx => {
-      debugger
-      
+    .then( (tx) => {
+      this.setState({loading: false});
     })
-    .catch(() => {
-      Swal.fire({
-        type: 'error',
-        title: hash,
-        text: 'is NOT a valid Transaction Hash!',
-      });
-      this.props.history.push(`/`);
-    });
+    // .catch(() => {
+    //   Swal.fire({
+    //     type: 'error',
+    //     title: hash,
+    //     text: 'is NOT a valid Transaction Hash!',
+    //   });
+    //   this.props.history.push(`/`);
+    // });
   }
   
   render(){
@@ -68,11 +73,12 @@ class TxHash extends React.Component {
         </div>
       </div>) : (
       <div style={contentStyle}>
+        <TXContainer></TXContainer>
       </div>
       )
     return (
       <div style={style}>
-        <NavBarContainer/>
+        <NavBarContainer hash={this.props.hash}/>
         {loadingResult}
       </div>
     );

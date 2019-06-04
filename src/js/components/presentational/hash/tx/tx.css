@@ -1,0 +1,46 @@
+.hash-tx-tx-link > a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+.hash-tx-tx-link > a:visited{
+  color: blue;
+  text-decoration: none;
+}
+
+.hash-tx-tx-link > a:hover{
+  color: blue;
+  text-decoration: none;
+}
+
+.hash-tx-tx-link > a:active{
+  color: blue;
+  text-decoration: none;
+}
+
+
+.hash-tx-tx-main-container{
+  margin: 100px auto 50px auto;
+}
+
+.hash-tx-tx-header-logo{
+  border-bottom: 5px solid #FFCA00;
+  margin-bottom: 35px;
+}
+
+.hash-tx-tx-container{
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgb(170, 174, 180);
+  padding-bottom: 20px;
+  min-width: 450px;
+ }
+
+ .hash-tx-tx-list-row-item{
+  border-bottom: 2px solid #DFE3EB;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.hash-tx-tx-mapped > .col-4 .hash-tx-tx-mapped > .col-8 {
+  padding-left: 0;
+} 
