@@ -1,6 +1,5 @@
 import React from 'react';
 import './address_summary.css';
-import { Link } from 'react-router-dom';
 
 class AddressSummary extends React.Component {
   
@@ -28,9 +27,7 @@ class AddressSummary extends React.Component {
             <div className="row address-summary-list-row-item align-items-center">
               <div className="col-4 text-truncate"><strong>Address:</strong></div>
               <div className="col-8 address-summary-right-td text-right text-truncate">
-                <Link to={`${address}`} >
-                  { address }
-                </Link>
+                { address }
               </div>
             </div>
           </div>
@@ -38,9 +35,7 @@ class AddressSummary extends React.Component {
             <div className="row address-summary-list-row-item align-items-center">
               <div className="col-4 text-truncate"><strong>Hash 160:</strong></div>
               <div className="col-8 address-summary-right-td text-right text-truncate">
-                <Link to={`${hash160}`} >
-                  { hash160 }
-                </Link>
+                { hash160 }
               </div>
             </div>
           </div>
@@ -55,7 +50,7 @@ class AddressSummary extends React.Component {
           <div className="container">
             <div className="row address-summary-list-row-item align-items-center">
               <div className="col-4 text-truncate"><strong>Total Received:</strong></div>
-              <div className="col-8 address-summary-right-td text-right text-truncate address-summary-currency">
+              <div className="col-8 address-summary-right-td text-right text-truncate ">
                 {totalReceived} BTC
               </div>
             </div>
@@ -63,7 +58,7 @@ class AddressSummary extends React.Component {
           <div className="container">
             <div className="row address-summary-list-row-item align-items-center">
               <div className="col-4 text-truncate"><strong>Total Sent:</strong></div>
-              <div className="col-8 address-summary-right-td text-right text-truncate address-summary-currency-sent">
+              <div className="col-8 address-summary-right-td text-right text-truncate">
                 {totalSent} BTC
               </div>
             </div>
@@ -71,7 +66,7 @@ class AddressSummary extends React.Component {
           <div className="container">
             <div className="row address-summary-list-row-item address-summary-last-item align-items-center">
               <div className="col-4 text-truncate"><strong>Final Balance:</strong></div>
-              <div className="col-8 address-summary-right-td text-right text-truncate address-summary-currency">
+              <div className="col-8 address-summary-right-td text-right text-truncate ">
                 {finalAddressAmount} BTC
               </div>
             </div>

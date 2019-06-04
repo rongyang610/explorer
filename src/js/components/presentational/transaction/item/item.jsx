@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Collapse, Card, CardBody } from 'reactstrap';
+import './item.css';
 
 const grayBg = {
   backgroundColor: '#FFFFFF',
@@ -60,8 +61,10 @@ class TransactionList extends React.Component {
 
       return(
       <div className="row align-items-center" key={i}>
-        <div className="col-7 text-truncate">
-          {address}
+        <div className="col-7 text-truncate blue-link-tx">
+          <Link to={`/BTC/${address}`} target='_blank'>
+            {address}
+          </Link>
         </div>
         <div className="col-4">
           {value}
@@ -81,8 +84,10 @@ class TransactionList extends React.Component {
       const style = addy === address ? toAddStyle : toNotAddStyle;
       return(
       <div className="row align-items-center" key={i}>
-        <div className="col-7 text-truncate">
-          {address}
+        <div className="col-7 text-truncate blue-link-tx">
+          <Link to={`/BTC/${address}`} target='_blank'>
+            {address}
+          </Link>
         </div>
         <div className="col-4">
           {value}

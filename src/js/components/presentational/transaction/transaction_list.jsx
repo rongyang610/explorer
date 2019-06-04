@@ -149,7 +149,7 @@ class TransactionList extends React.Component {
               </div>
             </div>
           </div>
-          <div id='accordion'>
+          <div id='accordion' className="container">
             {mappedTx}
           </div>
         </div>

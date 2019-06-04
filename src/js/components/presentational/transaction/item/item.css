@@ -1,0 +1,19 @@
+.blue-link-tx > a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+.blue-link-tx a:visited{
+  color: blue;
+  text-decoration: none;
+}
+
+.blue-link-tx a:hover{
+  color: blue;
+  text-decoration: none;
+}
+
+.blue-link-tx a:active{
+  color: blue;
+  text-decoration: none;
+}
