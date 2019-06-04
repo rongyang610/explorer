@@ -1,6 +1,6 @@
 # Explorer
 
-[Live Site](https://www.jjyang.com/explorer)
+[Live Site](https://www.jjyang.me/explorer)
 
 Explorer, is a cryptocurrency explorer. It allows user to view transactions from a bitcoin address using Blockchain.com's API.
 
