@@ -8,6 +8,8 @@ class TransactionList extends React.Component {
     super(props);
     this.state={
       loading: true,
+      page: 0,
+      showAmount: 50,
     };
   }
 
@@ -86,6 +88,7 @@ class TransactionList extends React.Component {
 
   mapped(address){
     const {txsArr} = this.props;
+    const {page} = this.state;
     const mappedHTML = txsArr.map((tx, i) => {
       const time = this.convertTimeStamp(tx.time);
       const txHash = tx.hash;
@@ -111,7 +114,17 @@ class TransactionList extends React.Component {
         />
       )
     });
-    return mappedHTML;
+    return mappedHTML.slice(50*page, 50*(page + 1));
+  }
+
+  makePageButtons(amount){
+    const newArr = new Array(Math.ceil(amount/50)).fill();
+    return newArr.map((_, i) => {
+      const active = (this.state.page === i) ? "btn-primary" : "btn-secondary";
+      return(<button key={i} onClick={() => this.setState({page: i})} className={`btn mx-1 ${active}`}>
+        {i + 1}
+      </button>)
+    });
   }
   
   render(){
@@ -129,11 +142,19 @@ class TransactionList extends React.Component {
         </div>
       </div>
     );
+    const pageButtons = this.makePageButtons(this.props.txsArr.length)
     return (
       <div className='container'>
         <div className='card transaction-container'>
-          <div className='card-body'>
-            <h4 className='card-title'>Transactions</h4>
+          <div className='card-body row'>
+
+            <h4 className='card-title col-3'>Transactions</h4>
+            <div className='col 2'>
+
+            </div>
+            <div className='col-3 text-right'>
+              {pageButtons}
+            </div>
           </div>
           <div className='container pl-4'>
             <div className='row transaction-list-row'>
