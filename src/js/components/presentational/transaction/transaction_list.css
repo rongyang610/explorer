@@ -9,3 +9,7 @@
 .transaction-wallet-info{
   margin: 10px 0 -10px 0;
 }
+
+.transaction-list-row{
+  padding-left: 14px;
+}

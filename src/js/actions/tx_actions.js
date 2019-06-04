@@ -10,11 +10,9 @@ const receieveTx = tx => {
 };
 
 export const getTx = hash => dispatch => {
-  debugger
   return (
     TXAPIUtil.fetchTx(hash)
     .then( (tx) => {
-      debugger
       return dispatch(receieveTx(tx));
     })
   );

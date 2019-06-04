@@ -19,7 +19,12 @@
 }
 
 .address-summary-main-container{
-  margin: 110px auto 50px auto;
+  margin: 100px auto 50px auto;
+}
+
+.address-summary-header-logo{
+  border-bottom: 5px solid #FFCA00;
+  margin-bottom: 35px;
 }
 
 .address-summary-container{
@@ -35,7 +40,7 @@
 
 .address-summary-list-row-item{
   border-bottom: 2px solid #F0F2F6;
-  margin: 0px 30px;
+  margin: 0;
   padding: 15px 0;
 }
 

@@ -137,7 +137,7 @@ class TransactionList extends React.Component {
             <h4 className='card-title'>Transactions</h4>
           </div>
           <div className='container pl-4'>
-            <div className='row'>
+            <div className='row transaction-list-row'>
               <div className='col-2 text-truncate'>
                 <strong>Timestamp</strong>
               </div>

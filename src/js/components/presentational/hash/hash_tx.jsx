@@ -23,7 +23,6 @@ const loadingStyle = {
 class TxHash extends React.Component {
   
   constructor(props) {
-    debugger
     super(props);
     this.state = {
       loading: true,
@@ -31,17 +30,14 @@ class TxHash extends React.Component {
   }
 
   componentDidMount(){
-    debugger
-    const {getTx, tx, hash} = this.props;
+    const { hash } = this.props;
     this.fetchTx(hash);
   }
 
   componentDidUpdate(){
-    debugger
   }
 
   fetchTx(hash){
-    debugger
     this.props.getTx(hash)
     .then( tx => {
       debugger
@@ -58,7 +54,6 @@ class TxHash extends React.Component {
   }
   
   render(){
-    debugger
     const loadingResult = this.state.loading ? (
       <div className='container' style={loadingStyle}>
         <div className='row align-items-center' style={loadingStyle}>

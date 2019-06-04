@@ -1,5 +1,6 @@
 import React from 'react';
 import './address_summary.css';
+import btcLogo from '../../../../images/btcLogo.png';
 
 class AddressSummary extends React.Component {
   
@@ -19,6 +20,12 @@ class AddressSummary extends React.Component {
     finalAddressAmount = this.convertToBTC(finalAddressAmount);
     return (
       <div className="address-summary-main-container container">
+        <div className="container pb-2 address-summary-header-logo">
+          <div className='row align-items-center'>
+              <img className="mr-2" src={btcLogo} alt="BTC Logo" width="38px" height="38px"/>
+              <h2 className="mt-2">Bitcoin | Address</h2>
+          </div>
+        </div>
         <div className="card address-summary-container">
           <div className="card-body">
             <h4 className="card-title address-summary-wallet-info">Wallet Summary</h4>
