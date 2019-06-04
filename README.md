@@ -1,13 +1,15 @@
 # Explorer
 
 To run a local server do the following:
+
 1. Open terminal
 2. Clone the repository: ```git clone https://github.com/rongyang610/explorer.git```
-3. Install npm: ```npm install```
-4. Start the local server: ```npm run build```
-5. Enjoy!
+3. cd into the explorer ```cd explorer```
+4. Install npm: ```npm install```
+5. Start the local server: ```npm run build```
+6. Enjoy!
 
-Explorer, is a cryptocurrency explorer. It allows user to view transactions from a bitcoin address using Blockchain.com's API.
+Explorer, is a cryptocurrency explorer. It allows a user to view transactions from a bitcoin address using Blockchain.com's API.
 
 ## Table of contents
 * [Technologies](#technologies)
@@ -15,6 +17,7 @@ Explorer, is a cryptocurrency explorer. It allows user to view transactions from
 * [Navigation Bar](#navigation-bar)
 * [Address Show Page](#address-show-page)
 * [Transaction Show Page](#transaction-show-page)
+* [Cool Feature](#cool-feature)
 * [Future Plans](#future-plans)
 
 ## Technologies
@@ -108,7 +111,7 @@ Code snippet of how I manage the transaction information that is being passed ba
 
 ## Transaction Show Page
 
-This is the page that gives a more detailed description of what occured during a transaction.
+This is the page that gives a more detailed description of what occurred during a transaction.
 
 ```javascript
 convertToBTCString(amount){
@@ -141,6 +144,10 @@ convertToBTCString(amount){
 Code snippet rendering values of output addresses and BTC amount.
 
 ![Display](/src/images/transactionShow.png)
+
+## Cool Feature
+
+![Display](/src/images/pagination.gif)
 
 ## Future Plans
 
