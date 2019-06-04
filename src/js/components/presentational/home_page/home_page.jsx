@@ -27,6 +27,7 @@ class HomePage extends React.Component {
   }
   
   render(){
+    // console.log(logo);
     return (
       <div className="home-page-main-container">
         <div className="home-page-header-container">
