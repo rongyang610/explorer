@@ -134,7 +134,7 @@ class TransactionList extends React.Component {
       <div className='container'>
         <div className='card transaction-container'>
           <div className='card-body'>
-            <h4 className='card-title text-center address-summary-wallet-info'>Transactions</h4>
+            <h4 className='card-title'>Transactions</h4>
           </div>
           <div className='container pl-4'>
             <div className='row'>

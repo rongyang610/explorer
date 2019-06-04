@@ -4,6 +4,7 @@ import NavBarContainer from '../../container/nav/nav_bar_container';
 import AddressSumaryContainer from '../../container/address_summary/address_summary_container';
 import TransactionListContainer from '../../container/transaction/transaction_list_container';
 import { ClipLoader } from 'react-spinners';
+import './address_page.css';
 
 const style = {
   display: 'flex',
@@ -111,7 +112,5 @@ class AddressPage extends React.Component {
     );
   }
 }
-
-
 
 export default AddressPage;

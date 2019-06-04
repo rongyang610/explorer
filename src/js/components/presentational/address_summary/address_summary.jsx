@@ -21,7 +21,7 @@ class AddressSummary extends React.Component {
       <div className="address-summary-main-container container">
         <div className="card address-summary-container">
           <div className="card-body">
-            <h4 className="card-title text-center address-summary-wallet-info">Wallet Summary</h4>
+            <h4 className="card-title address-summary-wallet-info">Wallet Summary</h4>
           </div>
           <div className="container">
             <div className="row address-summary-list-row-item align-items-center">
@@ -76,7 +76,5 @@ class AddressSummary extends React.Component {
     );
   }
 }
-
-
 
 export default AddressSummary;

@@ -166,6 +166,4 @@ class TransactionList extends React.Component {
   }
 }
 
-
-
 export default TransactionList;
