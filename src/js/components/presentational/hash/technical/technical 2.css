@@ -1,0 +1,16 @@
+.hash-tx-technical-main-container{
+  margin: 100px auto 50px auto;
+}
+
+.hash-tx-technical-container{
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgb(170, 174, 180);
+  padding-bottom: 20px;
+  min-width: 450px;
+ }
+
+ .hash-tx-technical-list-row-item{
+  border-bottom: 2px solid #DFE3EB;
+  margin: 0;
+  padding: 15px 0;
+}

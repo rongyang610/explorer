@@ -1,0 +1,6 @@
+.swal2-title {
+  font-size: .78em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
