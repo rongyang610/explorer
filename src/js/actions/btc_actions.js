@@ -3,7 +3,6 @@ import * as BTCAPIUtil from '../utils/btc_api_utils';
 export const RECEIVE_BTC_ADDRESS_INFO = 'RECEIVE_BTC_ADDRESS_INFO';
 export const RECEIVE_MORE_BTC_ADDRESS_INFO = 'RECEIVE_MORE_BTC_ADDRESS_INFO';
 export const RECEIVE_BLOCK_COUNT = 'RECEIVE_BLOCK_COUNT';
-// export const RECEIVE_BTC_ADDRESS_ERROR = 'RECEIVE_BTC_ADDRESS_ERROR';
 
 const receiveBTCAddressInfo = info => {
   return {

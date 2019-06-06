@@ -159,4 +159,3 @@ Code snippet rendering values of output addresses and BTC amount.
 * Allow users to search for transaction hash
 * Add some filtering
 * Add react-pagination
-* Calculate # of confirmations

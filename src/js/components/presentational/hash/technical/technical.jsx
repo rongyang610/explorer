@@ -13,7 +13,7 @@ class Technical extends React.Component {
   }
   
   render(){
-    const{blockHeight, unixTime, size} = this.props;
+    const{blockHeight, unixTime, size, currentBlockCount} = this.props;
     const newTime = this.convertTimeStamp(unixTime);
     const newSize = size + " bytes";
     return (
@@ -38,7 +38,7 @@ class Technical extends React.Component {
                     <strong>Confirmations</strong>
                   </div>
                   <div className="col-6 text-truncate text-right">
-                    Coming Soon
+                    {currentBlockCount - blockHeight}
                   </div>
                 </div>
               </div>

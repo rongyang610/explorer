@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://rongyang610.github.io/explorer",
   "scripts": {
-    "start": "webpack --mode development",
+    "start": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

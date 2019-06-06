@@ -47,7 +47,8 @@ class TxHash extends React.Component {
 
   fetchTx(hash){
     this.props.getTx(hash)
-    .then( (tx) => {
+    .then(() => this.props.getBlockCount())
+    .then( () => {
       this.setState({loading: false});
     })
     .catch(() => {

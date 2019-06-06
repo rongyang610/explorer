@@ -125,7 +125,7 @@ class TransactionList extends React.Component {
             {time}
           </div>
           <div className='col-7 text-truncate blue-link-tx'>
-            <Link to={`/btc/tx/${txHash}`} target="_blank">
+            <Link to={`/btc/tx/${txHash}`}>
               {txHash}
             </Link>
           </div>
