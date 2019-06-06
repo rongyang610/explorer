@@ -19,7 +19,7 @@ const receiveMoreBTCAddressInfo = info => {
   };
 };
 
-const receiveMoreBTCAddressInfo = block => {
+const receiveBlockCount = block => {
   return {
     type: RECEIVE_BLOCK_COUNT,
     block
